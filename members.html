@@ -481,10 +481,9 @@
                                 <p style="color: #C9A961; font-size: 0.85rem; margin: 0 0 1rem 0;">📍 Almeria, Spain</p>
 
                                 <ul style="color: #EDD9C0; font-size: 0.85rem; line-height: 1.7; margin: 0 0 1rem 0; padding-left: 1.1rem;">
-                                    <li>21-room boutique hotel with spa</li>
-                                    <li>Natural hot spring facilities</li>
-                                    <li>244,084 m² land for expansion</li>
-                                    <li>Film screening cinema venue</li>
+                                    <li>The first place you can physically enter the world</li>
+                                    <li>Boutique hotel, hot springs, private film cinema</li>
+                                    <li>60 acres in the Tabernas desert — room to grow</li>
                                 </ul>
 
                                 <div style="background: rgba(0,0,0,0.25); border-radius: 6px; padding: 0.75rem 1rem; margin-bottom: 0;">
@@ -535,10 +534,9 @@
                                 <p style="color: #C9A961; font-size: 0.85rem; margin: 0 0 1rem 0;">📍 Almeria, Spain</p>
 
                                 <ul style="color: #EDD9C0; font-size: 0.85rem; line-height: 1.7; margin: 0 0 1rem 0; padding-left: 1.1rem;">
-                                    <li>Historic Sergio Leone film set</li>
-                                    <li>Tabernas Desert location</li>
-                                    <li>Authentic Western town structures</li>
-                                    <li>Lvl 1 experience + filming hub</li>
+                                    <li>The ground where Leone shot The Good The Bad and The Ugly</li>
+                                    <li>The sets are still standing</li>
+                                    <li>Level 1 filming hub and frontier experience</li>
                                 </ul>
 
                                 <div style="background: rgba(0,0,0,0.25); border-radius: 6px; padding: 0.75rem 1rem; margin-bottom: 0;">
@@ -589,10 +587,9 @@
                                 <p style="color: #C9A961; font-size: 0.85rem; margin: 0 0 1rem 0;">📍 Big Bend, Texas</p>
 
                                 <ul style="color: #EDD9C0; font-size: 0.85rem; line-height: 1.7; margin: 0 0 1rem 0; padding-left: 1.1rem;">
-                                    <li>90,000 acres of Texas borderland</li>
-                                    <li>5 miles of Rio Grande riverfront</li>
-                                    <li>Ultimate frontier destination</li>
-                                    <li>Multiple towns and full immersion</li>
+                                    <li>The actual river. The actual border. The actual land</li>
+                                    <li>90,000 acres. 5 miles of Rio Grande riverfront</li>
+                                    <li>The full vision. Perpetual 1880</li>
                                 </ul>
 
                                 <div style="background: rgba(0,0,0,0.25); border-radius: 6px; padding: 0.75rem 1rem; margin-bottom: 0;">
@@ -2120,15 +2117,72 @@
                         <span id="currentEmail">Loading...</span>
                         <button class="change-link" onclick="toggleSettingsSection('emailSection')">Change</button>
                     </div>
+                    <!-- Update Email (hidden by default) -->
+                    <div class="account-section settings-section" id="emailSection" style="display: none;">
+                        <div class="section-header">
+                            <h3>Change Email</h3>
+                            <button class="section-close" onclick="toggleSettingsSection('emailSection')">&times;</button>
+                        </div>
+                        <div class="account-message" id="emailMessage" style="display: none;"></div>
+                        <form id="emailForm">
+                            <div class="account-form-group">
+                                <label for="newEmail">New Email</label>
+                                <input type="email" id="newEmail" placeholder="Enter new email" required>
+                            </div>
+                            <div class="account-form-group">
+                                <label for="emailPassword">Current Password</label>
+                                <input type="password" id="emailPassword" placeholder="Confirm your password" required>
+                            </div>
+                            <button type="submit" class="account-btn-primary">Update Email</button>
+                        </form>
+                    </div>
                     <div class="account-info">
                         <label>Display Name</label>
                         <span id="currentDisplayName">Loading...</span>
                         <button class="change-link" onclick="toggleSettingsSection('displayNameSection')">Change</button>
                     </div>
+                    <!-- Update Display Name (hidden by default) -->
+                    <div class="account-section settings-section" id="displayNameSection" style="display: none;">
+                        <div class="section-header">
+                            <h3>Change Display Name</h3>
+                            <button class="section-close" onclick="toggleSettingsSection('displayNameSection')">&times;</button>
+                        </div>
+                        <div class="account-message" id="displayNameMessage" style="display: none;"></div>
+                        <form id="displayNameForm">
+                            <div class="account-form-group">
+                                <label for="newDisplayName">New Display Name</label>
+                                <input type="text" id="newDisplayName" placeholder="Enter new display name" required>
+                            </div>
+                            <button type="submit" class="account-btn-primary">Update Name</button>
+                        </form>
+                    </div>
                     <div class="account-info">
                         <label>Password</label>
                         <span style="color: #666;">••••••••</span>
                         <button class="change-link" onclick="toggleSettingsSection('passwordSection')">Change</button>
+                    </div>
+                    <!-- Update Password (hidden by default) -->
+                    <div class="account-section settings-section" id="passwordSection" style="display: none;">
+                        <div class="section-header">
+                            <h3>Change Password</h3>
+                            <button class="section-close" onclick="toggleSettingsSection('passwordSection')">&times;</button>
+                        </div>
+                        <div class="account-message" id="passwordMessage" style="display: none;"></div>
+                        <form id="passwordForm">
+                            <div class="account-form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" placeholder="Enter current password" required>
+                            </div>
+                            <div class="account-form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword" placeholder="Enter new password (min. 6 characters)" required minlength="6">
+                            </div>
+                            <div class="account-form-group">
+                                <label for="confirmNewPassword">Confirm New Password</label>
+                                <input type="password" id="confirmNewPassword" placeholder="Confirm new password" required minlength="6">
+                            </div>
+                            <button type="submit" class="account-btn-primary">Update Password</button>
+                        </form>
                     </div>
                     <div class="account-info" style="border-bottom: none;">
                         <label>PASO Balance</label>
@@ -2143,66 +2197,6 @@
                         <span style="font-size: 0.8rem; white-space: nowrap;">Remove account & data</span>
                         <button class="change-link" style="color: #cc4444;" onclick="toggleSettingsSection('deleteSection')">Delete</button>
                     </div>
-                </div>
-
-                <!-- Update Display Name (hidden by default) -->
-                <div class="account-section settings-section" id="displayNameSection" style="display: none;">
-                    <div class="section-header">
-                        <h3>Change Display Name</h3>
-                        <button class="section-close" onclick="toggleSettingsSection('displayNameSection')">&times;</button>
-                    </div>
-                    <div class="account-message" id="displayNameMessage" style="display: none;"></div>
-                    <form id="displayNameForm">
-                        <div class="account-form-group">
-                            <label for="newDisplayName">New Display Name</label>
-                            <input type="text" id="newDisplayName" placeholder="Enter new display name" required>
-                        </div>
-                        <button type="submit" class="account-btn-primary">Update Name</button>
-                    </form>
-                </div>
-
-                <!-- Update Email (hidden by default) -->
-                <div class="account-section settings-section" id="emailSection" style="display: none;">
-                    <div class="section-header">
-                        <h3>Change Email</h3>
-                        <button class="section-close" onclick="toggleSettingsSection('emailSection')">&times;</button>
-                    </div>
-                    <div class="account-message" id="emailMessage" style="display: none;"></div>
-                    <form id="emailForm">
-                        <div class="account-form-group">
-                            <label for="newEmail">New Email</label>
-                            <input type="email" id="newEmail" placeholder="Enter new email" required>
-                        </div>
-                        <div class="account-form-group">
-                            <label for="emailPassword">Current Password</label>
-                            <input type="password" id="emailPassword" placeholder="Confirm your password" required>
-                        </div>
-                        <button type="submit" class="account-btn-primary">Update Email</button>
-                    </form>
-                </div>
-
-                <!-- Update Password (hidden by default) -->
-                <div class="account-section settings-section" id="passwordSection" style="display: none;">
-                    <div class="section-header">
-                        <h3>Change Password</h3>
-                        <button class="section-close" onclick="toggleSettingsSection('passwordSection')">&times;</button>
-                    </div>
-                    <div class="account-message" id="passwordMessage" style="display: none;"></div>
-                    <form id="passwordForm">
-                        <div class="account-form-group">
-                            <label for="currentPassword">Current Password</label>
-                            <input type="password" id="currentPassword" placeholder="Enter current password" required>
-                        </div>
-                        <div class="account-form-group">
-                            <label for="newPassword">New Password</label>
-                            <input type="password" id="newPassword" placeholder="Enter new password (min. 6 characters)" required minlength="6">
-                        </div>
-                        <div class="account-form-group">
-                            <label for="confirmNewPassword">Confirm New Password</label>
-                            <input type="password" id="confirmNewPassword" placeholder="Confirm new password" required minlength="6">
-                        </div>
-                        <button type="submit" class="account-btn-primary">Update Password</button>
-                    </form>
                 </div>
 
                 <!-- Delete Account Confirmation (hidden by default) -->
