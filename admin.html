@@ -567,9 +567,17 @@ function doGet(e) {
                 return;
             }
 
+            // Use same-origin proxy if available, fall back to direct fetch
+            const useProxy = location.protocol !== 'file:';
+            const proxyBase = '/api/sheets-proxy';
+
+            function getUrl(action) {
+                return useProxy ? `${proxyBase}?action=${action}` : `${webhookUrl}?action=${action}`;
+            }
+
             // Try to fetch summary data
             try {
-                const summaryResponse = await fetch(webhookUrl + '?action=getSummary', { redirect: 'follow' });
+                const summaryResponse = await fetch(getUrl('getSummary'));
                 const summary = await summaryResponse.json();
 
                 document.getElementById('totalUsers').textContent = summary.totalUsers.toLocaleString();
@@ -582,7 +590,7 @@ function doGet(e) {
                 document.getElementById('setupInstructions').style.display = 'none';
 
                 // Load recent transactions
-                const txResponse = await fetch(webhookUrl + '?action=getRecentTransactions', { redirect: 'follow' });
+                const txResponse = await fetch(getUrl('getRecentTransactions'));
                 const transactions = await txResponse.json();
 
                 renderTransactions(transactions);
