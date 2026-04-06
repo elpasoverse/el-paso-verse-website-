@@ -569,7 +569,7 @@ function doGet(e) {
 
             // Try to fetch summary data
             try {
-                const summaryResponse = await fetch(webhookUrl + '?action=getSummary');
+                const summaryResponse = await fetch(webhookUrl + '?action=getSummary', { redirect: 'follow' });
                 const summary = await summaryResponse.json();
 
                 document.getElementById('totalUsers').textContent = summary.totalUsers.toLocaleString();
@@ -582,7 +582,7 @@ function doGet(e) {
                 document.getElementById('setupInstructions').style.display = 'none';
 
                 // Load recent transactions
-                const txResponse = await fetch(webhookUrl + '?action=getRecentTransactions');
+                const txResponse = await fetch(webhookUrl + '?action=getRecentTransactions', { redirect: 'follow' });
                 const transactions = await txResponse.json();
 
                 renderTransactions(transactions);
