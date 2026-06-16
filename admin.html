@@ -518,15 +518,15 @@ function doGet(e) {
             document.getElementById('adminDashboard').style.display = 'block';
 
             // Load saved URLs
+            const DEFAULT_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1xNwLggkQuVOWEEs6F1TZMUrWnLv19MT7mzF_3O2fBrc/edit?gid=0#gid=0';
             const savedUrl = localStorage.getItem('pasoWebhookUrl');
-            const savedSheetUrl = localStorage.getItem('pasoSheetUrl');
+            // Always enforce the correct sheet URL
+            localStorage.setItem('pasoSheetUrl', DEFAULT_SHEET_URL);
             if (savedUrl) {
                 document.getElementById('webhookUrlInput').value = savedUrl;
             }
-            if (savedSheetUrl) {
-                document.getElementById('sheetUrlInput').value = savedSheetUrl;
-                document.getElementById('sheetLink').href = savedSheetUrl;
-            }
+            document.getElementById('sheetUrlInput').value = DEFAULT_SHEET_URL;
+            document.getElementById('sheetLink').href = DEFAULT_SHEET_URL;
 
             loadData();
         }

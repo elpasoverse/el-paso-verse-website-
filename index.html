@@ -46,7 +46,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=11">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -354,10 +354,10 @@
 
             <!-- Community Count -->
             <div style="text-align: center; margin-bottom: 2.5rem;">
-                <div style="font-size: 3rem; font-weight: 700; color: #3A2820; font-family: 'Cinzel', Georgia, serif;">1,150+</div>
+                <div style="font-size: 3rem; font-weight: 700; color: #3A2820; font-family: 'Cinzel', Georgia, serif;">1,442+</div>
                 <div style="font-size: 1.1rem; color: #8B4513; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2rem;">Community Members & Counting</div>
                 <div style="width: 100%; max-width: 400px; height: 3px; background: rgba(201, 169, 97, 0.15); margin: 0 auto 0.75rem;">
-                    <div style="width: 76.67%; height: 100%; background: linear-gradient(to right, #C9A961, #d4b570);"></div>
+                    <div style="width: 95%; height: 100%; background: linear-gradient(to right, #C9A961, #d4b570);"></div>
                 </div>
                 <div style="font-size: 0.7rem; color: #8B7355; letter-spacing: 0.08em; text-transform: uppercase; font-family: 'Cinzel', Georgia, serif;">Next milestone: 1,500</div>
             </div>
@@ -650,5 +650,32 @@
             updateFloatingUI();
         }
     </script>
+
+    <!-- Vision Section Parallax -->
+    <script>
+        (function () {
+            var vision = document.getElementById('vision');
+            if (!vision) return;
+            var ticking = false;
+
+            function updateParallax() {
+                if (window.innerWidth <= 768) { ticking = false; return; }
+                var rect = vision.getBoundingClientRect();
+                var viewH = window.innerHeight;
+                var progress = (viewH - rect.top) / (viewH + rect.height);
+                progress = Math.max(0, Math.min(1, progress));
+                // Shift Y from 20% to 50% — always within bounds, no seams
+                vision.style.backgroundPosition = 'center ' + (20 + progress * 30) + '%';
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function () {
+                if (!ticking) { requestAnimationFrame(updateParallax); ticking = true; }
+            }, { passive: true });
+
+            updateParallax();
+        })();
+    </script>
+
 </body>
 </html>

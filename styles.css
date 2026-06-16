@@ -232,11 +232,13 @@ p {
 /* Vision Section */
 .vision {
     background-image: url('assets/unidentified-man-river.jpg');
+    background-color: #1a1209;
     background-size: cover;
-    background-position: center right;
+    background-position: center 30%;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     position: relative;
+    padding: 6rem 0;
 }
 
 .vision::before {
@@ -391,7 +393,6 @@ p {
     text-align: center;
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid #C9A961;
 }
 
 .vision-link {
@@ -1732,6 +1733,8 @@ p {
 
     .vision {
         background-attachment: scroll;
+        background-position: 65% center;
+        padding: 7rem 0 8rem 0;
     }
 
     .hero-subtitle {
@@ -1783,7 +1786,7 @@ p {
 
     .paso-token {
         min-height: 100vh;
-        padding: 3rem 0;
+        padding: 7rem 0 8rem 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1865,7 +1868,7 @@ p {
 
     .el-paso-verse {
         min-height: 100vh;
-        padding: 3rem 0;
+        padding: 7rem 0 8rem 0;
         background-attachment: scroll;
         background-size: cover;
         display: flex;
@@ -1877,6 +1880,14 @@ p {
         font-size: 1rem;
         line-height: 1.8;
         margin-bottom: 1.25rem;
+    }
+
+    .vision h2 {
+        margin-top: 5rem;
+    }
+
+    .vision .container {
+        padding-bottom: 8rem;
     }
 
     .vision-content {
@@ -1901,6 +1912,10 @@ p {
         padding: 0.8rem 1.8rem;
         font-size: 0.95rem;
         min-height: 48px;
+    }
+
+    .pillars {
+        padding: 7rem 0 8rem 0;
     }
 
     .pillars-grid {
@@ -1942,7 +1957,7 @@ p {
 
     .collection {
         min-height: 100vh;
-        padding: 3rem 0 4rem 0;
+        padding: 7rem 0 8rem 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1989,7 +2004,7 @@ p {
 
     .instagram-section {
         min-height: 100vh;
-        padding: 3rem 0;
+        padding: 7rem 0 8rem 0;
         display: flex;
         align-items: center;
         justify-content: center;
