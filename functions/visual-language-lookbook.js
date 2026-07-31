@@ -30,6 +30,6 @@ export async function onRequest(context) {
     });
   }
   const assetUrl = new URL(context.request.url);
-  assetUrl.pathname = "/visual-language-lookbook-deck.html";
+  assetUrl.pathname = "/visual-language-lookbook-deck";
   return context.env.ASSETS.fetch(new Request(assetUrl, context.request));
 }
