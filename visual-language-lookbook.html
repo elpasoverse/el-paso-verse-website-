@@ -352,8 +352,18 @@ body{
    ============================================================ */
 .stage-cover{
   flex:1 1 auto; min-height:0;
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center; position:relative;
+}
+.cover-main{
+  flex:1 1 auto; min-height:0;
   display:flex; flex-direction:column; align-items:center; justify-content:center;
-  text-align:center; gap:14px; position:relative;
+  text-align:center; gap:14px; width:100%;
+}
+.cover-footer{
+  flex:0 0 auto;
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center; width:100%;
 }
 .cover-kicker{
   font-family:var(--font-body); font-size:11px; letter-spacing:.3em; text-transform:uppercase;
@@ -834,26 +844,30 @@ html, body{ overflow-x:hidden; max-width:100%; }
         </div>
 
         <div class="stage-cover">
-          <div class="cover-kicker">El Paso Verse · Production</div>
-          <div class="cover-title">The&nbsp;Visionary</div>
-          <div class="cover-sub">Visual Language &amp; Lookbook</div>
-          <div class="cover-meta">Tone · Lighting · Framing · Camera Philosophy — July 2026 · Internal</div>
-          <div class="cover-spine" aria-hidden="true"></div>
-          <div class="cover-worlds">
-            <div class="cover-world-chip">
-              <div class="num"><span class="dot" style="background:#8FB4D1"></span>World One</div>
-              <div class="nm">The Business World</div>
-              <div class="desc">Cold. Hard. Clinical.</div>
-            </div>
-            <div class="cover-world-chip">
-              <div class="num"><span class="dot" style="background:#D99A4E"></span>World Two</div>
-              <div class="nm">The Desert</div>
-              <div class="desc">Bare. Waiting. Isolated.</div>
-            </div>
-            <div class="cover-world-chip">
-              <div class="num"><span class="dot" style="background:#D4AF37"></span>World Three</div>
-              <div class="nm">Breaking the Surface</div>
-              <div class="desc">Fully alive. Total Cinema.</div>
+          <div class="cover-main">
+            <div class="cover-kicker">El Paso Verse · Production</div>
+            <div class="cover-title">The&nbsp;Visionary</div>
+            <div class="cover-sub">Visual Language &amp; Lookbook</div>
+            <div class="cover-meta">Tone · Lighting · Framing · Camera Philosophy — July 2026 · Internal</div>
+          </div>
+          <div class="cover-footer">
+            <div class="cover-spine" aria-hidden="true"></div>
+            <div class="cover-worlds">
+              <div class="cover-world-chip">
+                <div class="num"><span class="dot" style="background:#8FB4D1"></span>World One</div>
+                <div class="nm">The Business World</div>
+                <div class="desc">Cold. Hard. Clinical.</div>
+              </div>
+              <div class="cover-world-chip">
+                <div class="num"><span class="dot" style="background:#D99A4E"></span>World Two</div>
+                <div class="nm">The Desert</div>
+                <div class="desc">Bare. Waiting. Isolated.</div>
+              </div>
+              <div class="cover-world-chip">
+                <div class="num"><span class="dot" style="background:#D4AF37"></span>World Three</div>
+                <div class="nm">Breaking the Surface</div>
+                <div class="desc">Fully alive. Total Cinema.</div>
+              </div>
             </div>
           </div>
         </div>
