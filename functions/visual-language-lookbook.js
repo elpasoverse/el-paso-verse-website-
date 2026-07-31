@@ -9,8 +9,8 @@ const PREVIEW_HTML = `<!doctype html>
 <meta property="og:title" content="The Visionary — Visual Language &amp; Lookbook" />
 <meta property="og:description" content="El Paso Verse production doc — tone, lighting, framing, and camera philosophy across the three worlds." />
 <meta property="og:image" content="https://elpaso1880.com/assets/og-visual-language-lookbook.jpg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="675" />
+<meta property="og:image:width" content="1600" />
+<meta property="og:image:height" content="714" />
 <meta property="og:url" content="https://elpaso1880.com/visual-language-lookbook" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="The Visionary — Visual Language &amp; Lookbook" />
