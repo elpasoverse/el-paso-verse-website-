@@ -3,6 +3,7 @@ Allow: /
 Disallow: /admin.html
 Disallow: /onboarding.html
 Disallow: /motion-print-stream.html
-Disallow: /visual-language-lookbook.html
+Disallow: /visual-language-lookbook
+Disallow: /visual-language-lookbook-deck.html
 
 Sitemap: https://elpasoverse.com/sitemap.xml
