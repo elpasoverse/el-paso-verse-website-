@@ -830,6 +830,39 @@ html, body{ overflow-x:hidden; max-width:100%; }
   img, video{ max-width:100%; height:auto; }
 }
 
+/* ============================================================
+   PHOTO LIGHTBOX — tap/click any content photo to view full-screen
+   ============================================================ */
+.viewport img{ cursor:zoom-in; }
+.viewport .brand-logo,
+.viewport .hero-base,
+.viewport .seal img{ cursor:default; }
+
+.lightbox{
+  position:fixed; inset:0; z-index:1000;
+  background:rgba(5,5,5,.96);
+  display:flex; align-items:center; justify-content:center;
+  padding:clamp(14px,4vw,44px);
+  opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity .18s ease;
+  touch-action:none; overscroll-behavior:contain;
+}
+.lightbox.is-open{ opacity:1; visibility:visible; pointer-events:auto; }
+.lightbox img{
+  max-width:100%; max-height:100%; width:auto; height:auto;
+  object-fit:contain; box-shadow:0 20px 60px rgba(0,0,0,.6);
+  cursor:zoom-out;
+}
+.lightbox-close{
+  position:absolute; top:clamp(10px,2.5vw,20px); right:clamp(10px,2.5vw,20px);
+  width:44px; height:44px; border-radius:50%;
+  background:rgba(20,20,20,.75); border:1px solid rgba(242,236,221,.25);
+  color:var(--paper); font-family:var(--font-body); font-size:22px; line-height:1;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+}
+.lightbox-close:hover{ border-color:var(--gold-dim); color:var(--gold); }
+
 </style>
 <div class="atmosphere" aria-hidden="true"></div>
 
@@ -1321,6 +1354,11 @@ html, body{ overflow-x:hidden; max-width:100%; }
   </div>
 </main>
 
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full-screen photo viewer">
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close full-screen photo">&times;</button>
+  <img id="lightboxImg" src="" alt="" />
+</div>
+
 <script>
 (function(){
   "use strict";
@@ -1703,6 +1741,41 @@ html, body{ overflow-x:hidden; max-width:100%; }
     }, { root: viewportEl, threshold: [0.6] });
     slides.forEach(function(s){ observer.observe(s); });
   }
+
+  /* ---------------------------------------------------------
+     PHOTO LIGHTBOX — tap/click any content photo to view full-screen
+     --------------------------------------------------------- */
+  var lightboxEl = document.getElementById("lightbox");
+  var lightboxImgEl = document.getElementById("lightboxImg");
+
+  function openLightbox(img){
+    lightboxImgEl.src = img.currentSrc || img.src;
+    lightboxImgEl.alt = img.alt || "";
+    lightboxEl.classList.add("is-open");
+  }
+  function closeLightbox(){
+    lightboxEl.classList.remove("is-open");
+    lightboxImgEl.src = "";
+  }
+
+  document.addEventListener("click", function(e){
+    if(lightboxEl.classList.contains("is-open") &&
+       (e.target === lightboxEl || e.target === lightboxImgEl || (e.target.closest && e.target.closest(".lightbox-close")))){
+      closeLightbox();
+      return;
+    }
+    var clickedImg = e.target.closest && e.target.closest("img");
+    if(clickedImg && viewportEl.contains(clickedImg) &&
+       !clickedImg.classList.contains("brand-logo") &&
+       !clickedImg.classList.contains("hero-base") &&
+       !clickedImg.closest(".seal")){
+      openLightbox(clickedImg);
+    }
+  });
+
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){ closeLightbox(); }
+  });
 
 })();
 </script>
