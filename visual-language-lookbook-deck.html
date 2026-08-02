@@ -837,6 +837,7 @@ html, body{ overflow-x:hidden; max-width:100%; }
 .viewport .brand-logo,
 .viewport .hero-base,
 .viewport .seal img{ cursor:default; }
+.reel-frame .tone{ cursor:zoom-in; }
 
 .lightbox{
   position:fixed; inset:0; z-index:1000;
@@ -1748,9 +1749,9 @@ html, body{ overflow-x:hidden; max-width:100%; }
   var lightboxEl = document.getElementById("lightbox");
   var lightboxImgEl = document.getElementById("lightboxImg");
 
-  function openLightbox(img){
-    lightboxImgEl.src = img.currentSrc || img.src;
-    lightboxImgEl.alt = img.alt || "";
+  function openLightbox(src, alt){
+    lightboxImgEl.src = src;
+    lightboxImgEl.alt = alt || "";
     lightboxEl.classList.add("is-open");
   }
   function closeLightbox(){
@@ -1769,7 +1770,19 @@ html, body{ overflow-x:hidden; max-width:100%; }
        !clickedImg.classList.contains("brand-logo") &&
        !clickedImg.classList.contains("hero-base") &&
        !clickedImg.closest(".seal")){
-      openLightbox(clickedImg);
+      openLightbox(clickedImg.currentSrc || clickedImg.src, clickedImg.alt);
+      return;
+    }
+    // Some photos (film-reel stills, location cards) are CSS background-image
+    // divs rather than <img> tags, so they need their own tap target.
+    var clickedTone = e.target.closest && e.target.closest(".reel-frame .tone");
+    if(clickedTone && viewportEl.contains(clickedTone)){
+      var bg = getComputedStyle(clickedTone).backgroundImage;
+      var m = /url\((['"]?)(.*?)\1\)/.exec(bg);
+      if(m && m[2]){
+        var capEl = clickedTone.parentElement && clickedTone.parentElement.querySelector(".cap");
+        openLightbox(m[2], capEl ? capEl.textContent : "");
+      }
     }
   });
 
