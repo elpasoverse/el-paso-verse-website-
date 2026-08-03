@@ -321,11 +321,29 @@
         <section id="stills" class="film-section" style="padding-top: 3rem;">
             <h3 style="margin-bottom: 1.5rem;">Stills</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                <img src="assets/visionary-still-01.jpg" alt="El Paso Verse: Part I still" loading="lazy" style="width: 100%; height: auto; display: block; border: 4px solid #F5E6D3; box-shadow: 0 8px 30px rgba(0,0,0,0.3);">
-                <img src="assets/visionary-still-02.jpg" alt="El Paso Verse: Part I still" loading="lazy" style="width: 100%; height: auto; display: block; border: 4px solid #F5E6D3; box-shadow: 0 8px 30px rgba(0,0,0,0.3);">
-                <img src="assets/visionary-still-03.jpg" alt="El Paso Verse: Part I still" loading="lazy" style="width: 100%; height: auto; display: block; border: 4px solid #F5E6D3; box-shadow: 0 8px 30px rgba(0,0,0,0.3);">
+                <img src="assets/visionary-still-01.jpg" alt="El Paso Verse: Part I still" loading="lazy" onclick="openLightbox(this.src)" style="width: 100%; height: auto; display: block; border: 4px solid #F5E6D3; box-shadow: 0 8px 30px rgba(0,0,0,0.3); cursor: zoom-in;">
+                <img src="assets/visionary-still-02.jpg" alt="El Paso Verse: Part I still" loading="lazy" onclick="openLightbox(this.src)" style="width: 100%; height: auto; display: block; border: 4px solid #F5E6D3; box-shadow: 0 8px 30px rgba(0,0,0,0.3); cursor: zoom-in;">
+                <img src="assets/visionary-still-03.jpg" alt="El Paso Verse: Part I still" loading="lazy" onclick="openLightbox(this.src)" style="width: 100%; height: auto; display: block; border: 4px solid #F5E6D3; box-shadow: 0 8px 30px rgba(0,0,0,0.3); cursor: zoom-in;">
             </div>
         </section>
+
+        <!-- Stills Lightbox -->
+        <div id="stills-lightbox" onclick="closeLightbox()" style="display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; padding: 2rem; cursor: zoom-out;">
+            <span onclick="closeLightbox()" style="position: absolute; top: 1.5rem; right: 2rem; color: #F5E6D3; font-size: 2.5rem; line-height: 1; cursor: pointer;">&times;</span>
+            <img id="stills-lightbox-img" src="" alt="El Paso Verse: Part I still (enlarged)" style="max-width: 100%; max-height: 100%; box-shadow: 0 15px 50px rgba(0,0,0,0.6);">
+        </div>
+        <script>
+            function openLightbox(src) {
+                document.getElementById('stills-lightbox-img').src = src;
+                document.getElementById('stills-lightbox').style.display = 'flex';
+            }
+            function closeLightbox() {
+                document.getElementById('stills-lightbox').style.display = 'none';
+            }
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeLightbox();
+            });
+        </script>
 
         <!-- Cast & Crew -->
         <section id="cast-crew" class="film-section" style="padding-top: 3rem;">
