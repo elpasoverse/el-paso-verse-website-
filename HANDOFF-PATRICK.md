@@ -225,10 +225,10 @@ Before going live:
 
 ## 👤 Credits
 
-**Published in El Paso Verse with participation from Kamara**
+**Published in El Paso Verse**
 
 - Concept & Direction: El Paso Verse team
-- Implementation: Kamara
+- Implementation: El Paso Verse Productions
 - Historical Photography Attribution: C.S. Fly (period-appropriate credit)
 - Archive Sources: The Brownsville Democrat, San Antonio Express
 
@@ -236,7 +236,7 @@ Before going live:
 
 ## 📞 Contact
 
-For questions or revisions, contact Kamara through established channels.
+For questions or revisions, contact the El Paso Verse team through established channels.
 
 ---
 

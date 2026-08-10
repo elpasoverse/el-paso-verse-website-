@@ -798,14 +798,6 @@
         max-width: 100% !important;
         box-sizing: border-box;
     }
-
-    /* Fix Kamara logo overflow */
-    .exclusive-content-flex img[alt="Kamara"],
-    div[style*="kamara"] img,
-    img[alt="Kamara"] {
-        max-width: 100% !important;
-        height: auto !important;
-    }
 }
 
 @media (max-width: 480px) {

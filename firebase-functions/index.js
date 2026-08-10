@@ -151,7 +151,7 @@ async function generateWaiverPDF(emailData, waiverData) {
         doc.fontSize(18).font('Helvetica-Bold')
            .text('STANDARD PARTICIPATION INTAKE WAIVER', { align: 'center' });
         doc.fontSize(12).font('Helvetica')
-           .text('Kamara / El Paso Verse – an Ind. Vision-Driven Creative Project', { align: 'center' });
+           .text('El Paso Verse – an Ind. Vision-Driven Creative Project', { align: 'center' });
         doc.moveDown(2);
 
         // Acceptance details
@@ -173,7 +173,7 @@ async function generateWaiverPDF(emailData, waiverData) {
         const sections = [
             {
                 title: '1. Nature and Spirit of the Project',
-                content: 'This project forms part of the Kamara / El Paso Verse creative universe, an independent, long-term creative vision initiated and developed by Harry West, and sustained through the personal vision, goodwill, trust, and continued effort of its creator(s). The Participant acknowledges that this project would not exist but for the commitment and perseverance of its creator(s), that it is pioneering in spirit, carving its own path outside conventional production models, and that it is pursued against significant practical, financial, and structural obstacles, particularly in today\'s entertainment industry landscape. The project is developed on a best-efforts basis, with limited resources, progressive financing, and open-ended timelines, and may include films, short works, experimental productions, and related creative activities.'
+                content: 'This project forms part of the El Paso Verse creative universe, an independent, long-term creative vision initiated and developed by Harry West, and sustained through the personal vision, goodwill, trust, and continued effort of its creator(s). The Participant acknowledges that this project would not exist but for the commitment and perseverance of its creator(s), that it is pioneering in spirit, carving its own path outside conventional production models, and that it is pursued against significant practical, financial, and structural obstacles, particularly in today\'s entertainment industry landscape. The project is developed on a best-efforts basis, with limited resources, progressive financing, and open-ended timelines, and may include films, short works, experimental productions, and related creative activities.'
             },
             {
                 title: '2. Risk, Uncertainty, and No Guarantees',
